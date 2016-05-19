@@ -110,7 +110,7 @@ n.times do |i|
   print "#{list[i]}"
 end
 
-n. = list.size - 1
+n = list.size - 1
 0.upto(n) do |i|
   print "#{list[i]}"
 end
@@ -119,8 +119,98 @@ n = list.size - 1
 for i in 0..n do
   print "#{list[i]}"
 end
+end
 
 list.each_index do |x|
   print "#{;is[x]}"
 end
 
+def my_sequence
+  (1..10).each do |i|
+    yield i
+  end
+end
+
+my_sequence {|x| puts x**3 }
+
+myFile = File.new("textfile.txt","w")
+myString = String.new("This is string object")
+
+your_string = "This is also a string object"
+number = 5
+
+x.object_id
+y.object_id
+
+x.gsub!(/a/,"x")
+y     # xbc
+
+x.freeze
+x.gsub!(/b/,"y")
+
+suits = [:hearts, :clubs, :diamonds, :spades]
+lead = suits[1].to_s
+
+suits = %i[hearts clubs diamonds spades] # massive of symbols
+
+class ClassName
+  # ...
+end
+
+class Friend
+  @@muname = "Andrey"
+
+  def initialize(nmae, sex, phone)
+    @name, @sex, @phone = name, sex, phone
+  end
+
+  def hello
+    puts "Hello, I #{@name}"
+  end
+
+  def Friend.our_common_friend
+    puts "We all frineds #{@@myname}."
+  end
+end
+
+f1 = Frined.new("Susan", "F","555-0123")
+f2 = Friend.new("Tom","M","555-4567")
+
+f1.hello
+f2.hello
+Frined.our_common_friend
+
+class MyClass
+
+  NAME = "Class Name"
+  @@count += 1
+
+  def initialize
+    @@count += 1
+    @myvar = 10
+  end
+
+  def MyClass.getcount
+    @@count
+  end
+
+  def getcount
+    @@count
+  end
+
+  def getmyvar
+    @myvar
+  end
+
+  def setmyvar(val)
+    @myvar = val
+  end
+
+  def myvar=(val)
+    @myvar = val
+  end
+end
+
+foo = MyClass.new
+foo.setmyvar 20
+foo.myvar = 30
