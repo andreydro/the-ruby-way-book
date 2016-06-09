@@ -214,3 +214,248 @@ end
 foo = MyClass.new
 foo.setmyvar 20
 foo.myvar = 30
+
+class MyClass
+    def method1
+      #...
+    end
+
+    def method2
+      #...
+    end
+
+    def method3
+      #...
+    end
+
+    private :method1
+    public
+
+    :method2
+    protected :method3
+
+    private
+
+    def my_method
+      #...
+    end
+
+    def another_method
+      # ...
+    end
+
+end
+
+Time.mktime(2000, "Aug", 24, 16, 0)
+
+3.succ.to_s
+3+2.succ
+
+my_array.each do |x|
+  some_action
+end
+
+File.open(filename) { |f| some_action }
+
+receiver.method(arg1, *more_args)
+
+def my_method(a, b, *c)
+  print a, b
+  c.each do |x| print x end
+end
+
+my_method(1,2,3,4,5,6,7)
+
+a = 1, b = 2, c = [3,4,5,6,7]
+
+def my_method(name: "default", options: {})
+  options.merge!(name: name)
+  some_action_with(options)
+end
+
+def other_method(name:, age:)
+  puts "Age of person #{name} is #{age} years" #error
+end
+
+str = "Hello, world!"
+str2 = "Goodbye!"
+
+def str.spell
+  self.split(/./).join("-")
+end
+
+str.spell
+str2.spell
+
+def calculate(op1, operator, op2)
+  string = op1.to_s + operator + op2.to_s
+  eval(string)
+end
+
+@alpha = 25
+@beta = 12
+
+puts calculate(2, "+", 2)
+puts calculate(5, "*", "@alpha")
+puts calculate("@beta", "**", 3)
+
+puts "Method name: "
+meth_name = gets
+puts "String of code: "
+code = gets
+
+string = %[def #{meth_name}\n #{code}\n end]
+eval(string)
+eval(meth_name)
+
+if platform == Windows
+  action1
+elsif platform == Linux
+  action2
+else
+  default_action
+end
+
+if defined? soe_var
+  puts "some_var = #{some_var}"
+else
+  puts "Variable some_var unknown"
+end
+
+puts "abc".class
+puts 345.class
+rover = Dog.new
+
+print rover.class
+
+if rover.is_a? Dog
+  puts "Of course, it is"
+end
+
+if rover.kind_of? Dog
+  puts "Yes, still a dog"
+end
+
+if rover.is_a? Animal
+  puts "Yes, it is an animal"
+end
+
+for var in 1..10
+  puts "var = #{var}"
+  if var . 5
+    var = var + 2
+  end
+end
+
+case expression
+  when value
+    some action
+end
+
+if value ===expression
+  some action
+end
+
+case "Hello"
+  when /Hell/
+    puts 'Conformity exist'
+else
+  puts "No conformity"
+end
+
+case /Hell/
+  when 'Hello'
+    puts "Conformity exist"
+else
+  puts "No conformity"
+end
+
+case x
+  when 0
+  when 1..5
+    puts "Second branch"
+  when 5..10
+    puts "Third branch"
+else
+  puts "Fourth branch"
+end
+
+my_array.each { |x| puts x }
+
+my_array.each do |x|
+  print x
+  if x % 2 == 0
+    puts "even"
+  else
+    puts "odd"
+  end
+end
+
+def power(exponent)
+  proc {|base| base**exponent}
+end
+
+square = power(2)
+cube = power(3)
+
+a = square.call(11)
+b = square.call(5)
+c = cude.call(6)
+d = cube.call(8)
+
+closure = nil
+1.times do
+  x = 5
+  closure = Proc.new { puts "in the end, x = #{x}"}
+end
+
+x = 1
+closure.call
+
+class MyClass
+
+  @x = 1
+  @y = 2
+
+  def my_method
+    @x = 3
+  end
+
+end
+
+y = if a < 8
+  6
+else
+  7
+end
+
+t = case a
+  when 0..3
+    "low"
+  when 4..6
+    "medium"
+else
+  "high"
+end
+
+i = 0
+x = while (i < 5)
+  puts i += 1
+end
+
+str = "hello"
+class << str
+  def hyphenated
+    self.split("").join("-")
+  end
+end
+
+str.hyphenated
+
+class MyClass
+  class << self
+    def hello
+      puts "Hello from #{self}"
+    end
+  end
+end
