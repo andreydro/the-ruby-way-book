@@ -140,3 +140,53 @@ loop do
   sep = ss.scan(/\W+/)
   break if sep.nil?
 end
+
+name = "Bob"
+age = 28
+str = sprintf("Hello, %s... You looks like %d year", name, age)
+str = ("%-20s %3d", name, age)
+str = "%-20s %3d" %[name,age]
+
+str = "Mody Dick"
+s1 = str.ljust(12)
+s2 = str.center(12)
+s3 = str.rjust(12)
+
+str = "Captain Ahav"
+s1 = str.ljust(20,"+")
+s2 = str.center(20,"-")
+s3 = rjust(20,"123")
+
+s1 = "Boston Tea Party"
+s2 = s1.downcase
+s3 = s2.upcase
+
+s4 = s1.capitalize
+s5 = s2.capitalize
+s6 = s3.capitalize
+
+s7 = "THIS IS EX-parrot"
+s8 = s7.swapcase
+
+n1 = "abc".casecmp("xyz")
+n2 = "abc".casecmp("XYZ")
+n3 = "ABC".casecmp("xyz")
+n4 = "ABC".casecmp("abc")
+n5 = "xyz".casecmp("abc")
+
+if string =~ /[a-z]/
+  puts "string contains symbols of lower case"
+end
+
+if string =~ /[A-Z]/ and string =~ /a-z/
+  puts "string contains symbols o different cases"
+end
+
+if string[0..0] =~ /[A-Z]/
+  puts "string starts from capitalized letter"
+end
+
+if string =~ /\p{Upper}/
+  puts "string contains symbols Unicode upper case, exmple U"
+end
+
