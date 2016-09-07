@@ -190,3 +190,71 @@ if string =~ /\p{Upper}/
   puts "string contains symbols Unicode upper case, exmple U"
 end
 
+str = "Shaltai-Boltai"
+sub1 = str[7,4]
+sub2 = str[7,99]
+sub3 = str[10,-4]
+
+str1 = "Alice"
+sub1 = str[-3,3]
+sub2 = "In mirror land"
+sub3 = str2[-8,6]
+
+str = "Windson Churchill"
+sub1 = str[8..13]
+sub2 = str[-4..-1]
+sub3 = str[-1..-4]
+sub4 = str[25..30]
+
+str = "Alistair Cooke"
+sub1 = str[/l..t/]
+sub2 = str[/a.*r/]
+sub3 = str[/foo/]
+
+str = "theater"
+sub1 = str["heat"]
+sub2 = str["eat"]
+sub3 = str["ate"]
+sub4 = str["beat"]
+sub5 = str["cheat"]
+
+str = "Aaron Burr"
+ch1 = str[0]
+ch2 = str[1]
+ch3 = str[99]
+
+str1 = "Shaltai-Boltai"
+str1[7,3] = "Hva"
+
+str2 = "Alice"
+str2[-3,3] = "lixandra"
+
+str3 = "V zazerkalie"
+str3[-9,9] = "stelko"
+
+str4 = "Winston Churcill"
+str4[8..11] = "X"
+
+str5 = "Alistair Cooke"
+str5[/e$/] = "ie Monster"
+
+str6 = "theater"
+str6["er"] = "re"
+
+str7 = "Aaron Burr"
+str7[0] = 66
+
+s1 = "spam, spam, and eggs"
+s2 = s1.sub(/spam/, "bacon")
+
+s3 = s2.sub(/(\w+), (\w+),/,'\2, \1, ')
+
+s4 = "Don`t forget the spam."
+s5 = s4.sub(/spam/) { |m| m.reverse }
+
+s4.sub!(/spam/) { |m| m.reverse }
+
+s5 = "alfalfa abracadabra"
+s6 = s5.gsub(/a[b1]/, "xx")
+s5.gsub!(/[lfdbr]/) { |m| m.upcase + "-"}
+
