@@ -258,3 +258,142 @@ s5 = "alfalfa abracadabra"
 s6 = s5.gsub(/a[b1]/, "xx")
 s5.gsub!(/[lfdbr]/) { |m| m.upcase + "-"}
 
+str = "Albert Einstein"
+pos1 = str.index(?E)
+pos2 = str.index("bert")
+pos3 = str.index(/in/)
+pos4 = str.index(?W)
+pos5 = str.index("bart")
+pos5 = str.index(/wein/)
+
+str = 'Albert Einstein'
+pos1 = str.rindex(?E)
+pos2 = str.rindex("bert")
+pos3 = str.rindex(/in/)
+pos4 = str.rindex(?W)
+pos5 = str.rindex("bart")
+pos6 = str.rindex(/wein/)
+
+str1 = "mathematics"
+tag1 = str1.include? ?e #true
+tag2 = str1.include? "math" #true
+str2 = "Daylight Saving Time"
+tag3 = str2.include? ?s #false
+tag4 = str2.include? 'Savings'  #false
+
+str1 = "abracadabra"
+sub1 = str1.scan(/a./) # sub1 = ["ab", "ac", "ad", "ad"]
+str2 = "Acapulco, Mexico"
+sub2 = str2.scan(/(.)(c.)/) #sub2 [["A", "ca"],["l","co"], ["i", "co"]]
+str3 = "Kobayashi"
+str3.scan(/[^aeiou] + [aeiou]/) do |x|
+  print "Slog: #{x}\n"
+end
+
+str = 77.chr
+s2 = 233.chr("UTF-8")
+num = "M".ord
+
+class Helium
+  def to_s
+    "He"
+  end
+  def to_str
+    "Helium"
+  end
+end
+
+e = Helium.new
+print "Element"
+puts e    # Element He
+puts "Element is " + e    # Element Helium
+puts "Element is #{e}"    # Element He
+
+def set_title(title)
+  if title.repsond_to? :to_str
+    title = title.to_str
+  end
+  #...
+end
+
+e = Helium.new
+str = "Pi #{3.14} and element #{e}"
+
+class Fixnum
+  def to_str
+    self.to_s
+  end
+end
+
+str = "Number equal " + 345
+
+str = "A"
+str << [1,2,3].to_s << " " << (3.14).to_s
+
+str = gets.chop
+s2 = "Some string\n"
+s3 = s2.chop!
+s4 = "Other string\r\n"
+s4.chop!
+
+str = "abcxyz"
+s1 = str.chop
+
+str = "abcxyz"
+str2 = "123\n"
+str3 = "123\r"
+str4 = "123\r\n"
+s1 = str.chomp
+s2 = str2.chomp
+s3 = str3.chomp
+s4 = str4.chomp
+
+str1 = "abcxyz"
+str2 = "abcxyz"
+s1 = str1.chomp("yz")
+s2 = str2.chomp("x")
+
+str1 = "\t \nabc \t\n"
+str2 = str1.strip # "abc"
+str3 = str1.strip!
+
+str = "abc"
+s2 = str.lstrip
+s3 = str.rstrip
+
+etc = "Etc. "*3
+ruler = "+" + ("."*4+"5"+"."*4+"+")*3
+
+puts "#{temp_f} by Farenheit equal #{temp_c} by Celsium"
+puts "Value of the determinant equal #{b*b - 4*a*c}."
+puts "#{word} this is #{word.reverse} vise versa"
+
+str = "Answer equal #{def factorial(n)
+    n == 0 ? 1 : n*factorial(n-1)
+    end
+  answer = factorial(3) * 7}, naturally."
+
+puts "$gvar = #$gvar and ivar = #@ivar."
+
+str = '#{name} - my name, #{nation} - my country'
+name, nation = "Stiven Duglas", "Irland"
+s1 = eval('''' + str + '"')
+  # Stiven Duglas - my name, Irland - my country
+
+str = proc do |name, nation|
+  "#{name} - my name, #{nation} - my country"
+end
+s2 = str.call("Guliver Foit", "Terra")
+# Guliver Floit - my name, Terra - my country
+
+string = gets.chop!
+# string "Doe, John", 35, 225, "5'10\'", "555-0123"
+data = eval("[" + string + "]")
+data.each {|x| puts "Value = #{x}"}
+# Result:
+# Value = Doe, John
+# Value = 35
+# Value = 225
+# Value = 5' 10"
+# Value = 555-0123
+
